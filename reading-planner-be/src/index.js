@@ -15,5 +15,6 @@ app.use((req, res, next) => {
 });
 app.use(express.json());
 app.use(cors());
+app.use(require('./routes'));
 
 server.listen(config.server.port);
