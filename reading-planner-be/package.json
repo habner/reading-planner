@@ -1,0 +1,28 @@
+{
+  "name": "reading-planner-be",
+  "version": "1.0.0",
+  "description": "A complete reading planner. Manage your book collection and get to know exactly how many pages you need to read to complete your book in time.",
+  "main": "index.js",
+  "repository": {
+    "url": "https://github.com/habner/reading-planner",
+    "type": "git"
+  },
+  "author": {
+    "name": "Habner Gerotto",
+    "url": "https://github.com/habner"
+  },
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.6.4",
+    "socket.io": "^2.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}
