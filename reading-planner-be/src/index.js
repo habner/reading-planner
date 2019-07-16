@@ -7,10 +7,10 @@ const server = require('http').Server(app);
 const io = require('socket.io')(server);
 const config = require('./config');
 
-mongoose.connect(config.db.string, {
-  useCreateIndex: true,
-  useNewUrlParser: true
-});
+mongoose.set('useNewUrlParser', true);
+mongoose.set('useFindAndModify', false);
+mongoose.set('useCreateIndex', true);
+mongoose.connect(config.db.string);
 
 app.use((req, res, next) => {
   req.io = io;

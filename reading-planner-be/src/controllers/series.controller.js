@@ -14,8 +14,7 @@ module.exports = {
 
   async store(req, res) {
     await Series
-    .create(req.body)
-    .exec((error, serie) => {
+    .create(req.body, (error, serie) => {
       if (error) { return res.status(500).send(error); }
       req.io.emit('serie-create', serie);
       return res.status(201).json(serie);
