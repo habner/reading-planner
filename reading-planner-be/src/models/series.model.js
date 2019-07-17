@@ -6,4 +6,11 @@ const SeriesSchema = new mongoose.Schema({
   timestamps: true
 });
 
+SeriesSchema.post('remove', (next) => {
+  mongoose
+  .model('Book')
+  .updateMany({ series: this._id }, { $unset: { series: 1, number: 1 }})
+  .then(() => next());
+});
+
 module.exports = mongoose.model('Series', SeriesSchema);
